@@ -19,7 +19,7 @@ void exec(char *codelines[], stack_t *stack)
 		{"null", NULL}
 	};
 
-	for (line_num = 1, cnt = 0; codelines[cnt + 1]; cnt++)
+	for (line_num = 1, cnt = 0; codelines[cnt + 1]; cnt++, line_num++)
 	{
 		if (strcmp("push", codelines[cnt]))
 			push_t(&stack, line_num, pshint(codelines[cnt], line_num));

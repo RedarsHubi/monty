@@ -51,5 +51,6 @@ void pop_st(stack_t **stack, unsigned int line_number);
 void swp_t_two(stack_t **stack, unsigned int line_number);
 void p_all(stack_t **stack, unsigned int line_num);
 int pshint(char *list, int ln);
+int combfind(char *list, int ln);
 
 #endif
