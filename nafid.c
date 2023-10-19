@@ -22,7 +22,10 @@ void exec(char *codelines[], stack_t *stack)
 	for (line_num = 1, cnt = 0; codelines[cnt + 1]; cnt++, line_num++)
 	{
 		if (strcmp("push", codelines[cnt]))
+		{
 			push_t(&stack, line_num, pshint(codelines[cnt], line_num));
+			printf("%s\n", codelines[cnt]);
+		}
 		else if (strcmp("nop", codelines[cnt]))
 			;
 		else
@@ -30,7 +33,8 @@ void exec(char *codelines[], stack_t *stack)
 			i = 0;
 			while (strcmp(ins[i].opcode, "null"))
 			{
-				if (strcmp(ins[i].opcode, codelines[cnt]))
+				printf("%s\n", ins[i].opcode);
+				if (!strcmp(ins[i].opcode, codelines[cnt]))
 				{
 					ins[i].f(&stack, line_num);
 					break;

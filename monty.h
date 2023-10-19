@@ -1,9 +1,10 @@
-#ifndef __HOOLB__
-#define __HOOLB__
+#ifndef MAIN_H
+#define MAIN_H
 
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
+#include<ctype.h>
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <fcntl.h>
@@ -40,19 +41,16 @@ typedef struct instruction_s
 	void (*f)(stack_t **stack, unsigned int line_num);
 } instruction_t;
 
-void pint(stack_t **stack, unsigned int line_num);
-void free_stack(stack_t *head);
-int pushint(char *list, int ln);
-int _strcmp(char *opcode, char *list);
-void add(stack_t **stack, unsigned int line_num);
-void swap(stack_t **stack, unsigned int line_num);
-void pop(stack_t **stack, unsigned int line_num);
-void push(stack_t **stack, unsigned int line_number, int n);
-void pall(stack_t **stack, unsigned int line_num);
-void execute(char *string[], stack_t *stack);
-int nlfind(char *list);
-void free_list(char *a[]);
+void exec(char *codelines[], stack_t *stack);
+void free_s(stack_t *head);
+void free_l(char *a[]);
+void add_t_two(stack_t **stack, unsigned int line_number);
+void p_top(stack_t **stack, unsigned int line_number);
+void push_t(stack_t **stack, unsigned int line_number, int value);
+void pop_st(stack_t **stack, unsigned int line_number);
+void swp_t_two(stack_t **stack, unsigned int line_number);
+void p_all(stack_t **stack, unsigned int line_num);
+int pshint(char *list, int ln);
 int combfind(char *list, int ln);
-
 
 #endif
